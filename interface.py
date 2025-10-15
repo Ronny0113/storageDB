@@ -1,0 +1,80 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1200, 800)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName("gridLayout")
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.pushButton_addMany = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_addMany.setObjectName("pushButton_addMany")
+        self.horizontalLayout.addWidget(self.pushButton_addMany)
+        self.pushButton_deleteMany = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_deleteMany.setObjectName("pushButton_deleteMany")
+        self.horizontalLayout.addWidget(self.pushButton_deleteMany)
+        self.pushButton_deleteInfo = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_deleteInfo.setObjectName("pushButton_deleteInfo")
+        self.horizontalLayout.addWidget(self.pushButton_deleteInfo)
+        #self.pushButton_update = QtWidgets.QPushButton(self.centralwidget)
+        #self.pushButton_update.setObjectName("pushButton_update")
+        #self.horizontalLayout.addWidget(self.pushButton_update)
+        self.gridLayout.addLayout(self.horizontalLayout, 0, 0, 1, 2)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setRowCount(0)
+        self.horizontalLayout_2.addWidget(self.tableWidget)
+        self.gridLayout.addLayout(self.horizontalLayout_2, 1, 0, 1, 1)
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.pushButton_add1 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_add1.setObjectName("pushButton_add1")
+        self.verticalLayout_3.addWidget(self.pushButton_add1)
+        self.pushButton_delete1 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_delete1.setObjectName("pushButton_delete1")
+        self.verticalLayout_3.addWidget(self.pushButton_delete1)
+        self.pushButton_cut = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_cut.setObjectName("pushButton_cut")
+        self.verticalLayout_3.addWidget(self.pushButton_cut)
+        self.gridLayout.addLayout(self.verticalLayout_3, 1, 1, 1, 1)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 700, 22))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "Металлобаза"))
+        self.pushButton_addMany.setText(_translate("MainWindow", "Добавить листы"))
+        self.pushButton_deleteMany.setText(_translate("MainWindow", "Удалить листы"))
+
+        self.pushButton_deleteInfo.setText(_translate("MainWindow", "Удалить запись"))
+
+        #self.pushButton_update.setText(_translate("MainWindow", "Обновить"))
+        self.pushButton_add1.setText(_translate("MainWindow", "Добавить 1"))
+        self.pushButton_delete1.setText(_translate("MainWindow", "Удалить 1"))
+        self.pushButton_cut.setText(_translate("MainWindow", "Обрезать"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
